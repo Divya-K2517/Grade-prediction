@@ -6,7 +6,7 @@ import sklearn.model_selection
 from sklearn.utils import shuffle
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("linear regression(predicting math grades)/student+performance(dataset)/student/student-math class.csv", sep = ";")
+data = pd.read_csv("linear regression(predicting math grades)/student data/student/student-math class.csv", sep = ";")
 
 for x in range(len(data["schoolsup"])): #extra educational support (binary: yes or no)
     if data["schoolsup"][x] == "yes":
@@ -21,7 +21,6 @@ for x in range (len(data["paid"])): #extra paid classes within the course subjec
 
 
 data = data [["G1", "G2", "G3", "studytime", "failures", "schoolsup", "paid", "absences"]] #cuts out all the columns and only includes the ones we care about
-
 predict = "G3" #label, it is defining which attribute we are trying to predict, in this case it is grade #3
 
 x = np.array(data.drop([predict], 1)) #makes an array of all the attributes, except the label
@@ -55,8 +54,8 @@ for i in (x_test):
 percentage = int((accuracy)*100)
 plt.scatter(avg_list, predictions, color = "red", label="predicted values")
 plt.scatter(avg_list, y_test, color = "black", label = "actual values")
-plt.xlabel("avg of the first two grades")
-plt.ylabel("grade #3")
+plt.xlabel("Average of the first two grades")
+plt.ylabel("Final Grade")
 plt.legend()
 plt.text(8, 21, "accuracy of the model: "+str(percentage) + "%")
 plt.show()
