@@ -1,0 +1,1 @@
+This project uses linear regression to predict a student's final grade based on several factors. It also produces a plot correlating the average of the student's first 2 grades with their final grade(grade #3). The predictions of the model are plotted in red, and the actual values are plotted in black. 
